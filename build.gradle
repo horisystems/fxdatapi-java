@@ -1,0 +1,97 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'signing'
+    id "maven-publish"
+    id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.9'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.hamcrest:hamcrest-all:1.3'
+}
+
+group = 'com.currensees'
+version = '0.1.0'
+description = 'currensees-java'
+sourceCompatibility = '1.11'
+targetCompatibility = '1.11'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = group
+            artifactId = description
+            version = version
+
+            from components.java
+
+            pom {
+                name = 'currensees-java'
+                description = 'Currensees Java Bindings'
+                url = 'https://github.com/moatsystems/currensees-java'
+                properties = [:]
+                licenses {
+                    license {
+                        name = 'BSD 3-Clause'
+                        url = 'https://github.com/moatsystems/LICENSE'
+                    }
+                }
+                organization {
+                    name = 'Moat Systems Limited'
+                    url = 'https://moatsystems.com'
+                }
+                developers {
+                    developer {
+                        name = 'Finbarrs Oketunji'
+                        email = 'f@finbarrs.eu'
+                        organization = 'Moat Systems Limited'
+                        organizationUrl = 'https://moatsystems.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git@github.com:moatsystems/currensees-java.git'
+                    developerConnection = 'scm:git:git@github.com:moatsystems/currensees-java.git'
+                    url = 'git@github.com:moatsystems/currensees-java'
+                }
+            }
+        }
+    }
+}
+
+signing {
+    def signingKeyId = findProperty("signingKeyId")
+    def signingKey = findProperty("signingKey")
+    def signingPassword = findProperty("signingPassword")
+    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+    sign publishing.publications.mavenJava
+}
+
+nexusPublishing {
+    repositories {
+        sonatype()
+    }
+}
+
+tasks.withType(Sign) {
+    onlyIf { isReleaseVersion }
+}
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}

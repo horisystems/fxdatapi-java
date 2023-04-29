@@ -1,0 +1,38 @@
+name: Java CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Java ${{ matrix.java-version }}
+    strategy:
+      matrix:
+        java-version:
+          - '11'
+          - '14'
+          - '15'
+          - '16'
+          - '17'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ matrix.java-version }}
+          distribution: 'adopt'
+          cache: gradle
+      - name: Compile
+        run: javac -cp lib/gson-2.10.1.jar:lib/okhttp-3.14.9.jar -d out src/main/java/com/currensees/*.java
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew build
