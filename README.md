@@ -85,6 +85,14 @@ public class MyApp {
                 System.out.println("Fetching weekly average failed.");
             }
 
+            // MonthlyAverage
+            Optional<String> monthlyAverageResult = MonthlyAverage.getMonthlyAverage(username, 2023, 04);
+            if (monthlyAverageResult.isPresent()) {
+                System.out.println("Monthly average result: " + monthlyAverageResult.get());
+            } else {
+                System.out.println("Fetching monthly average failed.");
+            }
+
             // Currencies
             Optional<String> currenciesResult = Currencies.getAllCurrencies(username, 19, 4, 2024);
             if (currenciesResult.isPresent()) {
