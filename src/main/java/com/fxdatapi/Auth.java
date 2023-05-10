@@ -1,4 +1,4 @@
-package com.currensees;
+package com.fxdatapi;
 
 import java.io.IOException;
 import java.net.URI;
@@ -13,7 +13,7 @@ public class Auth {
         HttpClient client = HttpClient.newHttpClient();
         String json = String.format("{\"username\": \"%s\", \"password\": \"%s\"}", username, password);
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://currensees.com/v1/login"))
+                .uri(URI.create("https://fxdatapi.com/v1/login"))
                 .header("Content-Type", "application/json")
                 .header("Accept", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(json))

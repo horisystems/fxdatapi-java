@@ -1,4 +1,4 @@
-package com.currensees;
+package com.fxdatapi;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -21,7 +21,7 @@ public class ConvertAll {
                             "}", username, date, baseCurrency, amount);
 
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://currensees.com/v1/convert_all"))
+                    .uri(URI.create("https://fxdatapi.com/v1/convert_all"))
                     .header("Content-Type", "application/json")
                     .header("Accept", "application/json")
                     .header("Cookie", "user_type=member; username=" + username)

@@ -1,4 +1,4 @@
-package com.currensees;
+package com.fxdatapi;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -12,7 +12,7 @@ public class Currencies {
         try {
             HttpClient client = HttpClient.newHttpClient();
 
-            String url = String.format("https://currensees.com/v1/currencies?username=%s&day=%d&month=%d&year=%d", username, day, month, year);
+            String url = String.format("https://fxdatapi.com/v1/currencies?username=%s&day=%d&month=%d&year=%d", username, day, month, year);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
@@ -39,7 +39,7 @@ public class Currencies {
         try {
             HttpClient client = HttpClient.newHttpClient();
 
-            String url = String.format("https://currensees.com/v1/currencies/%s?username=%s&day=%d&month=%d&year=%d", currencyId, username, day, month, year);
+            String url = String.format("https://fxdatapi.com/v1/currencies/%s?username=%s&day=%d&month=%d&year=%d", currencyId, username, day, month, year);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))

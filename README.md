@@ -1,6 +1,6 @@
 ## Currency API Java Client
 
-[![Build Status](https://github.com/moatsystems/currensees-java/actions/workflows/ci.yml/badge.svg)](https://github.com/moatsystem/currensees-java/actions/workflows/ci.yml)
+[![Build Status](https://github.com/moatsystems/fxdatapi-java/actions/workflows/ci.yml/badge.svg)](https://github.com/moatsystem/fxdatapi-java/actions/workflows/ci.yml)
 
 A Java client for interacting with [Currency API](https://moatsystems.com/currency-api/).
 
@@ -18,8 +18,8 @@ Add this dependency to your project's POM:
 
 ```java
 <dependency>
-  <groupId>com.currensees</groupId>
-  <artifactId>currensees-java</artifactId>
+  <groupId>com.fxdatapi</groupId>
+  <artifactId>fxdatapi-java</artifactId>
   <version>X.X.X</version>
 </dependency>
 ```
@@ -29,7 +29,7 @@ Add this dependency to your project's POM:
 Add this dependency to your `build.gradle` file:
 
 ```
-compile 'com.currensees:currensees-java:X.X.X'
+compile 'com.fxdatapi:fxdatapi-java:X.X.X'
 ```
 
 ### Usage Example
@@ -39,7 +39,7 @@ This library is a Java client you can use to interact with the [Currency API](ht
 ```java
 package myapp;
 
-import com.currensees;
+import com.fxdatapi;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import java.util.Optional;
@@ -186,7 +186,7 @@ Subscribe [here](https://moatsystems.com/currency-api/) for a user account.
 
 ### Using the Currency API
 
-You can read the [API documentation](https://docs.currensees.com/) to understand what's possible with the Currency API. If you need further assistance, don't hesitate to [contact us](https://moatsystems.com/contact/).
+You can read the [API documentation](https://docs.fxdatapi.com/) to understand what's possible with the Currency API. If you need further assistance, don't hesitate to [contact us](https://moatsystems.com/contact/).
 
 ### License
 

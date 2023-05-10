@@ -1,19 +1,19 @@
-package com.currensees;
+package com.fxdatapi;
 
 import java.io.IOException;
 import java.util.Optional;
 import okhttp3.*;
 import okhttp3.MediaType;
 
-public class Signals {
+public class MarginsSpreads {
 
-    private static final String BASE_URL = "https://currensees.com/v1/signals";
+    private static final String BASE_URL = "https://fxdatapi.com/v1/margins_spreads";
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
-    public static Optional<String> getAllSignals(String username) {
+    public static Optional<String> getAllMarginsSpreads(String username, int day, int month, int year) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(BASE_URL + "?username=" + username)
+                .url(BASE_URL + "?username=" + username + "&day=" + day + "&month=" + month + "&year=" + year)
                 .header("Accept", "application/json")
                 .header("Cookie", "user_type=member; username=" + username)
                 .build();
@@ -26,10 +26,10 @@ public class Signals {
         }
     }
 
-    public static Optional<String> getSignalById(String username, String signalId) {
+    public static Optional<String> getMarginsSpreadsById(String username, String uuid, int day, int month, int year) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url(BASE_URL + "/" + signalId + "?username=" + username)
+                .url(BASE_URL + "/" + uuid + "?username=" + username + "&day=" + day + "&month=" + month + "&year=" + year)
                 .header("Accept", "application/json")
                 .header("Cookie", "user_type=member; username=" + username)
                 .build();
