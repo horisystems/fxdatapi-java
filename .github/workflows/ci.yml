@@ -29,7 +29,7 @@ jobs:
           distribution: 'adopt'
           cache: gradle
       - name: Compile
-        run: javac -cp lib/gson-2.10.1.jar:lib/okhttp-3.14.9.jar -d out src/main/java/com/currensees/*.java
+        run: javac -cp lib/gson-2.10.1.jar:lib/okhttp-3.14.9.jar -d out src/main/java/com/fxdatapi/*.java
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
