@@ -1,10 +1,10 @@
 ## Currency API Java Client
 
-[![Build Status](https://github.com/moatsystems/fxdatapi-java/actions/workflows/ci.yml/badge.svg)](https://github.com/moatsystem/fxdatapi-java/actions/workflows/ci.yml)
+[![Build Status](https://github.com/horisystems/fxdatapi-java/actions/workflows/ci.yml/badge.svg)](https://github.com/horisystems/fxdatapi-java/actions/workflows/ci.yml)
 
-A Java client for interacting with [Currency API](https://moatsystems.com/currency-api/).
+A Java client for interacting with [Currency API](https://horisystems.com/currency-api/).
 
-[Moat Systems](https://moatsystems.com) provides customers with accurate and up-to-date currency data for making informed decisions in the global financial market, including Gold, Silver and Special Drawing Rights. Our reliable exchange rate data assist businesses in confidently managing foreign transactions, investments and risks. Accounting, E-commerce, CRM, and ERP software companies will find it helpful to integrate with us instead of developing a custom in-house solution.
+[Hori Systems](https://horisystems.com) provides customers with accurate and up-to-date currency data for making informed decisions in the global financial market, including Gold, Silver and Special Drawing Rights. Our reliable exchange rate data assist businesses in confidently managing foreign transactions, investments and risks. Accounting, E-commerce, CRM, and ERP software companies will find it helpful to integrate with us instead of developing a custom in-house solution.
 
 ### Requirements
 
@@ -34,7 +34,7 @@ compile 'com.fxdatapi:fxdatapi-java:X.X.X'
 
 ### Usage Example
 
-This library is a Java client you can use to interact with the [Currency API](https://moatsystems.com/currency-api/).
+This library is a Java client you can use to interact with the [Currency API](https://horisystems.com/currency-api/).
 
 ```java
 package myapp;
@@ -182,11 +182,11 @@ public class MyApp {
 
 ### Setting up Currency API Account
 
-Subscribe [here](https://moatsystems.com/currency-api/) for a user account.
+Subscribe [here](https://horisystems.com/currency-api/) for a user account.
 
 ### Using the Currency API
 
-You can read the [API documentation](https://docs.fxdatapi.com/) to understand what's possible with the Currency API. If you need further assistance, don't hesitate to [contact us](https://moatsystems.com/contact/).
+You can read the [API documentation](https://docs.fxdatapi.com/) to understand what's possible with the Currency API. If you need further assistance, don't hesitate to [contact us](https://horisystems.com/contact/).
 
 ### License
 
@@ -194,4 +194,4 @@ This project is licensed under the [BSD 3-Clause License](./LICENSE).
 
 ### Copyright
 
-(c) 2020 - 2023 [Moat Systems Limited](https://moatsystems.com).
+(c) 2020 - 2023 [Hori Systems Limited](https://horisystems.com).
